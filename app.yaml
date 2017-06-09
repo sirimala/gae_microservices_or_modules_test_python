@@ -1,0 +1,19 @@
+application: testing
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /login/.*
+  script: login.login.app
+
+- url: /logout/.*
+  script: logout.logout.app
+
+- url: .*
+  script: main.app
+
+libraries:
+- name: webapp2
+  version: "2.5.2"
